@@ -32,6 +32,7 @@ function PropertyDetailPage() {
         setError(data.message || 'Error al cargar la propiedad');
       }
     } catch (error) {
+      console.error('Error fetching property:', error);
       setError('Error de conexión');
     } finally {
       setLoading(false);
@@ -116,6 +117,7 @@ function PropertyDetailPage() {
         setBookingMessageType('danger');
       }
     } catch (error) {
+      console.error('Error al crear la reserva:', error);
       setBookingMessage('Error de conexión');
       setBookingMessageType('danger');
     }
@@ -201,8 +203,8 @@ function PropertyDetailPage() {
                 <div className="mb-3">
                   <h5>Amenidades</h5>
                   <div className="d-flex flex-wrap">
-                    {property.amenities.map((amenity, index) => (
-                      <Badge key={index} bg="light" text="dark" className="me-2 mb-2">
+                    {property.amenities.map((amenity) => (
+                      <Badge key={amenity} bg="light" text="dark" className="me-2 mb-2">
                         {amenity}
                       </Badge>
                     ))}

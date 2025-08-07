@@ -101,6 +101,7 @@ function AddPropertyPage() {
         num_bathrooms: formData.num_bathrooms ? parseFloat(formData.num_bathrooms) : null,
         max_guests: formData.max_guests ? parseInt(formData.max_guests) : null,
         base_price: formData.base_price ? parseFloat(formData.base_price) : null,
+        images: imageUrls // Add the uploaded image URLs to the property data
       };
 
       const response = await fetch('http://localhost:5000/properties/', {

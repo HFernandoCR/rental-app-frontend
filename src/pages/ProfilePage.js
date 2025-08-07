@@ -60,6 +60,7 @@ function ProfilePage() {
         setMessageType('danger');
       }
     } catch (error) {
+      console.error('Error updating profile:', error);
       setMessage('Error de conexión');
       setMessageType('danger');
     }

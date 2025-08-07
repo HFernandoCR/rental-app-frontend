@@ -48,6 +48,7 @@ function LoginPage() {
         setMessageType('danger');
       }
     } catch (error) {
+      console.error('Login error:', error);
       setMessage('Error de conexión');
       setMessageType('danger');
     }

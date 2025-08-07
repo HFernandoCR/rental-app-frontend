@@ -47,6 +47,7 @@ function RegisterPage() {
         setMessageType('danger');
       }
     } catch (error) {
+      console.error('Error during registration:', error);
       setMessage('Error de conexión');
       setMessageType('danger');
     }

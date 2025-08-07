@@ -37,7 +37,7 @@ function MyPropertiesPage() {
         setError(data.message || 'Error al cargar tus propiedades');
       }
     } catch (error) {
-      setError('Error de conexión');
+      setError(error.message ||'Error de conexión');
     } finally {
       setLoading(false);
     }

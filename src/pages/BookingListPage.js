@@ -40,6 +40,7 @@ function BookingListPage() {
         setError(data.message || 'Error al cargar las reservas');
       }
     } catch (error) {
+      console.error('Error fetching bookings:', error);
       setError('Error de conexión');
     } finally {
       setLoading(false);
@@ -69,7 +70,7 @@ function BookingListPage() {
         setError(data.message || 'Error al actualizar la reserva');
       }
     } catch (error) {
-      setError('Error de conexión');
+      setError(error.message || 'Error de conexión');
     }
   };
 
